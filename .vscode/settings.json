@@ -1,0 +1,16 @@
+{
+  // Next.js compiles src/styles/globals.scss itself (via the `sass` dev
+  // dependency), so `npm run dev` already hot-reloads your SCSS edits.
+  //
+  // Live Sass Compiler is therefore switched off for this workspace: if it also
+  // ran, it would drop a generated globals.css next to the .scss that nothing
+  // imports, and it's easy to end up editing the wrong file.
+  //
+  // To hand compilation back to the extension instead: delete this setting,
+  // then change the import in src/pages/_app.js to "@/styles/globals.css".
+  "liveSassCompile.settings.excludeList": ["**/*.scss"],
+
+  "[scss]": {
+    "editor.formatOnSave": true
+  }
+}
