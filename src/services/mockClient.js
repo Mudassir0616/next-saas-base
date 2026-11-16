@@ -1,11 +1,20 @@
 /**
- * Mock transport. Delete this file once every service in this folder calls the
- * real API instead. See src/mock/README.md.
+ * Mock transport for the sample data that each service file keeps at its top.
+ * Delete this file once every service calls the real API instead (see
+ * "Going live with a real API" in the README).
  */
 
 const LATENCY_MS = 260;
+const DAY_MS = 86_400_000;
 
 export const delay = (ms = LATENCY_MS) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Dates relative to now, so sample rows never look stale ("3d ago" stays "3d
+ * ago"). Fractions work too: daysAgo(0.1) is about 2.4 hours ago.
+ */
+export const daysAgo = (days) => new Date(Date.now() - days * DAY_MS).toISOString();
+export const daysAhead = (days) => new Date(Date.now() + days * DAY_MS).toISOString();
 
 const compare = (a, b) => {
   if (a == null) return -1;

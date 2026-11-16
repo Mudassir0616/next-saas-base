@@ -1,6 +1,30 @@
-import { DEMO_USERS } from "@/mock/users";
 import { delay } from "./mockClient";
 // import { authApi } from "./endpoints";
+
+// Sample data — the accounts the mock login accepts. Delete this block when the
+// real API is wired up below. Passwords are plain text on purpose.
+const DEMO_USERS = [
+  {
+    id: 1,
+    email: "admin@example.com",
+    password: "password",
+    name: "Alex Morgan",
+    role: "Administrator",
+    jobTitle: "Head of Revenue",
+    phone: "+1 415 555 0132",
+    timezone: "America/Los_Angeles",
+  },
+  {
+    id: 2,
+    email: "member@example.com",
+    password: "password",
+    name: "Sam Rivera",
+    role: "Member",
+    jobTitle: "Account Executive",
+    phone: "+1 415 555 0177",
+    timezone: "America/New_York",
+  },
+];
 
 /**
  * Resolves to { user, access, refresh } or throws an Error with a message the
